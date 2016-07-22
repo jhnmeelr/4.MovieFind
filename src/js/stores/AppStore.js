@@ -1,15 +1,15 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var AppConstants = require('../constants/AppConstants');
-var EventEmmiter = require('events').EventEmmiter;
+var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
-var AppAPI = require('./utils/appAPI');
+var AppAPI = require('../utils/appAPI');
 
 var CHANGE_EVENT = 'change';
 
 var _movies = [];
 var _selected = '';
 
-var AppStore = assign({}, EventEmmiter.prototype, {
+var AppStore = assign({}, EventEmitter.prototype, {
     emitChange: function() {
         this.emit(CHANGE_EVENT);
     },
